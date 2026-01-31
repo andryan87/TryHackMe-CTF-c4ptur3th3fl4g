@@ -57,22 +57,16 @@ Answer:
 Pertanyaan 8:```— . .-.. . -.-. — — — — ..- -. .. -.-. .- — .. — — -. . -. -.-. — — -.. .. -. — .```
 Jika Anda memiliki pengalaman di bidang forensik, telekomunikasi, atau sering menonton film, Anda akan tahu ini adalah Kode Morse (titik dan garis).
 Berikut adalah hasil dekode dari kode Morse Code yang Anda berikan:
-1.
+
+*1.
 - . .-.. . -.-. --- -- -- ..- -. .. -.-. .- - .. --- -.
 TELECOMMUNICATION
-2.
+
+*2.
 . -. -.-. --- -.. .. -. --.
 ENCODING
 Answer:
 ```telecommunication encoding```
-Cara Mendapatkan Jawaban
-Unduh File Audio: Di halaman TryHackMe, akan ada tombol untuk mengunduh file audio (biasanya bernama .wav atau .mp3).
-Buka di Audacity: Gunakan perangkat lunak editor audio gratis seperti Audacity (atau Sonic Visualizer).
-Ganti Tampilan: Di Audacity, klik pada nama trek audio (di sebelah kiri, di samping tombol Mute/Solo), lalu pilih "Spectrogram" dari menu dropdown.
-Baca Pesan: Sebuah pesan tersembunyi akan muncul dalam bentuk teks visual di area gelombang suara. 
-Jawaban atau flag yang tersembunyi di dalam file audio untuk tugas ini biasanya adalah:
-Answer:
-```Super Secret Message```
 
 Pertanyaan 9: 85 110 112 97 99 107 32 116 104 105 115 32 66 67 68
 Urutan angka ini bisa berupa desimal atau oktal. Setelah dicoba dengan basis 10, ini terbukti merupakan format desimal.
