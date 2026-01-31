@@ -9,7 +9,8 @@ scan the target
 <img width="342" height="83" alt="image" src="https://github.com/user-attachments/assets/a885dc50-13ab-411d-aa9f-4f4409062079" />
 
 <br>
-bash```nmap -sS -sV 10.10.225.145```
+
+bash ```nmap -sS -sV 10.10.225.145```
 <img width="415" height="70" alt="image" src="https://github.com/user-attachments/assets/e35af6d2-892f-45eb-adc4-e1fe65f3e2e8" />
 
 <br>
