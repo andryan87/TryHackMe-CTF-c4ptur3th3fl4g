@@ -1,5 +1,7 @@
-panduan langkah-demi-langkah (walkthrough) untuk menyelesaikan Google XSS Game, sebuah platform pelatihan keamanan siber yang dirancang oleh Google untuk mengajarkan teknik eksploitasi Cross-Site Scripting (XSS). 
-Berikut adalah poin-poin utama dari repositori tersebut:
+**Panduan langkah-demi-langkah (walkthrough) untuk menyelesaikan Google XSS Game, sebuah platform pelatihan keamanan siber yang dirancang oleh Google untuk mengajarkan teknik eksploitasi Cross-Site Scripting (XSS).**
+
+_Berikut adalah poin-poin utama dari repositori tersebut:_
+
 1. Fokus Materi
 
 Intisari (TL;DR):
@@ -18,15 +20,21 @@ Selamat datang, rekrutan baru!
 
 Bug Cross-site scripting (XSS) adalah salah satu kerentanan web yang paling umum dan berbahaya. Serangga jahat ini dapat memungkinkan penyerang untuk mencuri atau mengubah data pengguna di dalam aplikasi.
 Google menangani XSS dengan sangat serius dan secara historis telah membayar imbalan (bounties) hingga $7.500 untuk bug XSS yang berbahaya.
+
 Akan ada kue di akhir permainan 🧪⚔️
 
 Lab Link: ``` https://xss-game.appspot.com/ ```
+
 <img width="1176" height="525" alt="image" src="https://github.com/user-attachments/assets/95c331f3-f0ae-427d-915e-cd6108528488" />
+
 Platform: Google XSS Game
+
 Vulnerability Class: Cross-Site Scripting (XSS)
+
 Panduan ini membahas enam level tantangan XSS dengan skenario yang berbeda-beda:
  
-*** 
+***
+
 Level 1 — Halo, Dunia XSS*
   
 Apakah Anda ingin saya lanjut menerjemahkan langkah-langkah penyelesaian untuk Level 1 ini, atau Anda ingin bantuan untuk:
@@ -77,7 +85,9 @@ Payload Terakhir (Level 1)
 JavaScript executes successfully.
 
 <img width="1179" height="368" alt="image" src="https://github.com/user-attachments/assets/dd91d405-b540-4b2c-b092-9899e0bbdb3f" />
+
 ***
+
 Level 2 (Stored XSS): Memasukkan skrip berbahaya ke dalam basis data (seperti di fitur komentar) menggunakan tag alternatif seperti <img> dengan atribut onerror.
 Level 3 (DOM-based XSS): Memanfaatkan manipulasi URL fragment (#) yang digunakan oleh JavaScript untuk mengubah elemen halaman.
 Level 4 (Context Matters): Melewati filter dengan menyesuaikan payload berdasarkan konteks di mana input ditampilkan, sering kali menggunakan pengkodean karakter.
