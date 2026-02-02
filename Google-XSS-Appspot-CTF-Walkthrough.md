@@ -210,7 +210,7 @@ octype html>
 </html>
 ```
 
-Input yang dikontrol pengguna ditampilkan melalui innerHTML. Tag script difilter, tetapi event handler tidak 🗿 
+Input yang dikontrol pengguna ditampilkan melalui ```_innerHTML_```. Tag script difilter, tetapi event handler tidak 
 
 <img width="1353" height="683" alt="image" src="https://github.com/user-attachments/assets/2dda54c5-61aa-442e-ab83-ea5f98871fd5" />
 
@@ -220,6 +220,59 @@ Input yang dikontrol pengguna ditampilkan melalui innerHTML. Tag script difilter
 ```<img src=x onerror=alert()>```
 
 Handler ```onerror``` dieksekusi — Level 2 berhasil diselesaikan.
+
+🧩 Level 3 — Perasaan Terpuruk... (That Sinking Feeling…)
+Tautan: ```https://xss-game.appspot.com/level3```
+
+Level: 3/6
+
+Tipe Kerentanan: `DOM-Based XSS`
+
+<img width="712" height="412" alt="image" src="https://github.com/user-attachments/assets/4c288b0a-95b1-4945-beb8-182fe490d0ae" />
+
+🔎 Analisis Parameter
+
+Fragmen URL (URL fragment): ```https://xss-game.appspot.com/level3/frame#1```
+
+Nilai yang valid: `1`, `2`, `3`. Input lainnya akan menghasilkan `Image NaN`. 
+
+<img width="592" height="347" alt="image" src="https://github.com/user-attachments/assets/adf9ab28-7694-4208-8796-8a13684d0d6a" />
+
+
+🔍Tinjauan Kode Sumber (Source Code Review)
+
+```
+function chooseTab(num) {
+  var html = "Image " + parseInt(num) + "<br>";
+  html += "<img src='/static/level3/cloud" + num + ".jpg' />";
+  $('#tabContent').html(html);
+}
+```
+
+Parameter num digabungkan secara langsung ke dalam HTML dan ditampilkan menggunakan jQuery.html() — sebuah sink DOM XSS.
+
+<img width="1363" height="690" alt="image" src="https://github.com/user-attachments/assets/ef15e30d-4dcc-4fe4-b523-2e1d7e396fd3" />
+
+🧪 Pemutusan Konteks (Context Break)
+
+Payload:
+
+```'```
+
+Output yang cacat (Malformasi):
+
+```<img src="/static/cloud/level3/cloud" .jpg'="">```
+
+<img width="1364" height="391" alt="image" src="https://github.com/user-attachments/assets/fe95b3dc-9001-4906-a3f1-68f115c52924" />
+
+💥 Payload Terakhir (Level 3)
+
+```' onerror=alert() '```
+
+Gambar yang cacat memicu eksekusi JavaScript.
+
+<img width="1355" height="365" alt="image" src="https://github.com/user-attachments/assets/371c71dc-6f1e-4e6d-8a0a-f984327e214e" />
+
 
 Level 3 (DOM-based XSS): Memanfaatkan manipulasi URL fragment (#) yang digunakan oleh JavaScript untuk mengubah elemen halaman.
 Level 4 (Context Matters): Melewati filter dengan menyesuaikan payload berdasarkan konteks di mana input ditampilkan, sering kali menggunakan pengkodean karakter.
