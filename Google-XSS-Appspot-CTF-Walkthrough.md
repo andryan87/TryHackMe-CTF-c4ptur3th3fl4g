@@ -2,8 +2,6 @@
 
 _Berikut adalah poin-poin utama dari repositori tersebut:_
 
-1. Fokus Materi
-
 Intisari (TL;DR):
 XSS bergantung pada konteks, bukan pada payload (muatan kode).
 innerHTML dan jQuery.html() adalah titik eksekusi (sinks) yang berbahaya.
@@ -221,7 +219,8 @@ Input yang dikontrol pengguna ditampilkan melalui ```_innerHTML_```. Tag script 
 
 Handler ```onerror``` dieksekusi — Level 2 berhasil diselesaikan.
 
-🧩 Level 3 — Perasaan Terpuruk... (That Sinking Feeling…)
+**🧩 Level 3 — Perasaan Terpuruk... (That Sinking Feeling…)**
+
 Tautan: ```https://xss-game.appspot.com/level3```
 
 Level: 3/6
@@ -274,7 +273,7 @@ Gambar yang cacat memicu eksekusi JavaScript.
 <img width="1355" height="365" alt="image" src="https://github.com/user-attachments/assets/371c71dc-6f1e-4e6d-8a0a-f984327e214e" />
 
 
-🧩 Level 4 — Konteks Adalah Kunci (Context Matters)
+**🧩 Level 4 — Konteks Adalah Kunci (Context Matters)**
 
 Tautan: https://xss-game.appspot.com/level4
 
@@ -295,17 +294,80 @@ Tipe Kerentanan: Injeksi Konteks JavaScript `(JavaScript Context Injection)`
 
 Input pengguna diinjeksikan ke dalam konteks string JavaScript. 
 
+<img width="1353" height="719" alt="image" src="https://github.com/user-attachments/assets/baa04428-6d60-470e-8a08-2cc1c3443469" />
+
+🧪 Payload yang Gagal
+
+```<script>alert(1)</script>```
+
+Telah di-escape dengan aman.
+
+<img width="1353" height="332" alt="image" src="https://github.com/user-attachments/assets/76a24e01-45e6-4434-84db-d3ad5d7fb7f3" />
+
+💥 Payload Terakhir (Level 4)
+
+```'); alert('1```
+
+Berhasil keluar dari string dan mengeksekusi JavaScript.
+
+<img width="1340" height="717" alt="image" src="https://github.com/user-attachments/assets/991a40f9-b7db-457a-aab9-7e47a20bd422" />
+
+**🧩 Level 5 — Memutus Protokol (Breaking Protocol)**
+
+Tautan: https://xss-game.appspot.com/level5
+
+Level: 5/6
+
+Tipe Kerentanan: Injeksi Protokol JavaScript (JavaScript URI Injection)
+
+<img width="1153" height="404" alt="image" src="https://github.com/user-attachments/assets/83da5336-a44e-4a5b-9bd1-d2bb12c87732" />
+
+**🔎 Alur Pendaftaran & Analisis Pantulan (Signup Flow & Reflection)**
+
+```https://xss-game.appspot.com/level5/frame/signup?next=hii```
+
+Response:
+
+```<a href="hii">Next >></a>```
+
+<img width="1148" height="345" alt="image" src="https://github.com/user-attachments/assets/b24180a3-dbad-4afa-9548-776423886b77" />
+
+<img width="1089" height="343" alt="image" src="https://github.com/user-attachments/assets/ba766e1d-49cb-4c6a-bd85-908426cfdf4e" />
+
+**🧪 Upaya Melewati Filter (Filter Bypass Attempt)**
+
+```hello.bro" attrib="Neww```
+
+<img width="1919" height="1032" alt="1" src="https://github.com/user-attachments/assets/9514702e-a35e-42b3-9739-7a74d443488b" />
 
 
+**💥 Payload Terakhir (Level 5)**
+
+javascript:alert()
+
+Dieksekusi saat diklik.
+
+<img width="1919" height="1032" alt="2" src="https://github.com/user-attachments/assets/ffa1a23d-07d1-4736-b5d4-0843e45e2c7e" />
+
+🔁 Observasi Tambahan
+
+Open Redirect terkonfirmasi:
+
+```https://xss-game.appspot.com/level5/frame/signup?next=https://adityabhatt3010.netlify.app/```
+
+<img width="1919" height="1032" alt="3" src="https://github.com/user-attachments/assets/9daf23a2-8dc8-4485-933e-e0f74aacaf80" />
+
+```javascript:alert()```
+
+<img width="1133" height="625" alt="image" src="https://github.com/user-attachments/assets/d94d6a70-ee19-4d35-86e0-ab80bf3789d0" />
+
+
+***
+Fokus Materi
+Panduan ini membahas enam level tantangan XSS dengan skenario yang berbeda-beda:
+Level 1 (Reflected XSS): Eksploitasi kolom pencarian sederhana yang tidak menyaring input.
+Level 2 (Stored XSS): Memasukkan skrip berbahaya ke dalam basis data (seperti di fitur komentar) menggunakan tag alternatif seperti <img> dengan atribut onerror.
+Level 3 (DOM-based XSS): Memanfaatkan manipulasi URL fragment (#) yang digunakan oleh JavaScript untuk mengubah elemen halaman.
 Level 4 (Context Matters): Melewati filter dengan menyesuaikan payload berdasarkan konteks di mana input ditampilkan, sering kali menggunakan pengkodean karakter.
 Level 5 (Breaking Protocol): Mengeksploitasi parameter URL yang memengaruhi tautan navigasi, biasanya dengan protokol javascript:.
 Level 6 (Follow the Rabbit): Memuat skrip eksternal dengan memanipulasi parameter URL yang mengambil sumber data dari domain luar. 
-3. Prinsip Utama yang Diajarkan
-Aditya Bhatt menekankan beberapa konsep penting dalam keamanan web: 
-Konteks adalah Kunci: Efektivitas serangan XSS bergantung pada di mana input pengguna ditempatkan (misalnya dalam atribut HTML, blok skrip, atau teks biasa), bukan hanya pada jenis payload-nya.
-Sink yang Berbahaya: Penggunaan fungsi seperti .innerHTML dan .html() milik jQuery adalah titik lemah yang sering memicu kerentanan DOM XSS.
-Filter Sering Gagal: Logika filter yang hanya memblokir kata tertentu (seperti <script>) sering kali dapat dilewati dengan variasi logika atau tag lain. 
-4. Tautan Penting
-Repositori GitHub: Berisi kode PoC (Proof of Concept) dan penjelasan teknis setiap level.
-Artikel Lengkap di InfoSec Write-ups: Penjelasan lebih mendalam mengenai setiap langkah eksploitasi dengan tangkapan layar.
-Google XSS Game Lab: Platform asli tempat Anda bisa mencoba langsung tantangan-tantangan ini. 
