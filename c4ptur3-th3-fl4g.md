@@ -290,7 +290,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 74478         0x122EE         PNG image, 147 x 37, 8-bit/color RGBA, non-interlaced
 74629         0x12385         Zlib compressed data, default compression
 
-┌──(kali㉿DESKTOP-K316IDI)-[~]
+┌──(kali㉿DESKTOP)-[~]
 
 └─$ ```binwalk -e meme_1559010886025.jpg```
 
@@ -299,7 +299,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 74407         0x122A7         RAR archive data, version 5.x
 74629         0x12385         Zlib compressed data, default compression
 
-┌──(kali㉿DESKTOP-K316IDI)-[~]
+┌──(kali㉿DESKTOP)-[~]
 
 └─$ binwalk -e meme_1559010886025.jpg
 
