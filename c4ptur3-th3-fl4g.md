@@ -265,3 +265,8 @@ Baca Hasil Ekstraksi: Perintah di atas akan mengekstrak sebuah file teks (biasan
 Alternatifnya, Anda juga bisa menggunakan layanan web seperti Aperi'Solve dengan mengunggah gambar tersebut untuk melihat pesan yang tersembunyi secara otomatis.
 
 https://www.aperisolve.com/e1bcd066f9d37f46622cb63cf5600a48
+<img width="327" height="621" alt="image" src="https://github.com/user-attachments/assets/a3f932e1-c047-4112-8235-9afb18341cb6" />
+<img width="1337" height="685" alt="image" src="https://github.com/user-attachments/assets/6fa07321-3e56-4040-964e-a2dc64f4c255" />
+<img width="1361" height="692" alt="image" src="https://github.com/user-attachments/assets/f45102c2-d694-4801-bc11-99976a0a7351" />
+
+
