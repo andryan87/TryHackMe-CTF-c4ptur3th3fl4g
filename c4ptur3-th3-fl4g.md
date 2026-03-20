@@ -273,4 +273,193 @@ https://www.aperisolve.com/e1bcd066f9d37f46622cb63cf5600a48
 
 <img width="1361" height="692" alt="image" src="https://github.com/user-attachments/assets/f45102c2-d694-4801-bc11-99976a0a7351" />
 
+# ***Security through obscurity — Task 4***
+
+Gunakan Perintah binwalk:
+Alat ini sangat efektif untuk melihat apakah ada file lain yang "menempel" di balik gambar tersebut. Jalankan perintah:
+
+┌──(kali㉿DESKTOP)-[~]
+└─$ ```binwalk meme_1559010886025.jpg```
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+30            0x1E            TIFF image data, big-endian, offset of first image directory: 8
+74407         0x122A7         RAR archive data, version 5.x
+74478         0x122EE         PNG image, 147 x 37, 8-bit/color RGBA, non-interlaced
+74629         0x12385         Zlib compressed data, default compression
+
+┌──(kali㉿DESKTOP-K316IDI)-[~]
+└─$ ```binwalk -e meme_1559010886025.jpg```
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+74407         0x122A7         RAR archive data, version 5.x
+74629         0x12385         Zlib compressed data, default compression
+
+┌──(kali㉿DESKTOP-K316IDI)-[~]
+└─$ binwalk -e meme_1559010886025.jpg
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
+WARNING: Extractor.execute failed to run external extractor 'unrar e '%e'': [Errno 2] No such file or directory: 'unrar', 'unrar e '%e'' might not be installed correctly
+
+WARNING: Extractor.execute failed to run external extractor 'unrar -x '%e'': [Errno 2] No such file or directory: 'unrar', 'unrar -x '%e'' might not be installed correctly
+74407         0x122A7         RAR archive data, version 5.x
+74629         0x12385         Zlib compressed data, default compression
+
+WARNING: One or more files failed to extract: either no utility was found or it's unimplemented
+
+┌──(kali㉿DESKTOP)-[~]
+└─$ ```cd _meme_1559010886025.jpg.extracted```
+
+┌──(kali㉿DESKTOP)-[~/_meme_1559010886025.jpg.extracted]
+└─$ ```ls```
+122A7.rar  12385  12385.zlib
+
+┌──(kali㉿DESKTOP-K316IDI)-[~/_meme_1559010886025.jpg.extracted]
+└─$ ```unrar e 122A7.rar```
+
+UNRAR 7.20 freeware      Copyright (c) 1993-2026 Alexander Roshal
+
+Extracting from 122A7.rar
+
+Extracting  hackerchat.png                                            OK
+All OK
+
+hackerchat.png
+Silakan masukkan jawaban tersebut. Jika kamu diminta untuk mencari "isi" atau flag selanjutnya, kamu perlu memeriksa file tersebut. Karena formatnya adalah .png, kamu bisa mencoba melihat isinya dengan membuka gambar tersebut atau melakukan analisis steganografi lagi pada hackerchat.png menggunakan:
+strings hackerchat.png
+Atau unggah ke Aperi'Solve lagi.
+
+<img width="1335" height="607" alt="image" src="https://github.com/user-attachments/assets/dcc255eb-21e8-46a3-ad44-b0642ad2e595" />
+
+Exiftool
+```
+Bit Depth	8
+Color Type	RGB with Alpha
+Compression	Deflate/Inflate
+Creation Time	Wed 15 May 2019 09:09:10 PM CDT
+Directory	..
+ExifTool Version Number	13.25
+File Access Date/Time	2026:03:20 10:47:55+00:00
+File Inode Change Date/Time	2026:03:20 10:47:52+00:00
+File Modification Date/Time	2026:03:20 10:47:52+00:00
+File Name	de4502de0ae70d4a95d0e304f1b24736.png
+File Permissions	-rw-r--r--
+File Size	5.6 kB
+File Type	PNG
+File Type Extension	png
+Filter	Adaptive
+Image Height	37
+Image Size	147x37
+Image Width	147
+Interlace	Noninterlaced
+MIME Type	image/png
+Megapixels	0.005
+Significant Bits	8 8 8 8
+Software	gnome-screenshot
+Warning	[minor] Trailer data after PNG IEND chunk
+```
+Binwalk
+```
+Scan Time:     2026-03-20 10:48:01
+Target File:   /app/aperisolve/results/de4502de0ae70d4a95d0e304f1b24736/de4502de0ae70d4a95d0e304f1b24736.png
+MD5 Checksum:  de4502de0ae70d4a95d0e304f1b24736
+Signatures:    436
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+151           0x97            Zlib compressed data, default compression
+Scan Time:     2026-03-20 10:48:01
+Target File:   /app/aperisolve/results/de4502de0ae70d4a95d0e304f1b24736/9caf2a949d546ff339d5f63a69b288be/_de4502de0ae70d4a95d0e304f1b24736.png.extracted/97
+MD5 Checksum:  f1190ee95afa155bc75f132176cbc779
+Signatures:    436
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+```
+Pngcheck
+```
+File: ../de4502de0ae70d4a95d0e304f1b24736.png (5562 bytes)
+  chunk IHDR at offset 0x0000c, length 13
+    147 x 37 image, 32-bit RGB+alpha, non-interlaced
+  chunk sBIT at offset 0x00025, length 4
+    red = 8 = 0x08, green = 8 = 0x08, blue = 8 = 0x08, alpha = 8 = 0x08
+  chunk tEXt at offset 0x00035, length 25, keyword: Software
+  chunk tEXt at offset 0x0005a, length 45, keyword: Creation Time
+  chunk IDAT at offset 0x00093, length 5373
+    zlib: deflated, 32K window, default compression
+  chunk IEND at offset 0x0159c, length 0
+  additional data after IEND chunk
+ERRORS DETECTED in ../de4502de0ae70d4a95d0e304f1b24736.png
+```
+Pcrt
+```
+Correct PNG header
+Correct IHDR CRC at offset 0x1D
+IHDR chunk check complete at offset 0x8
+Copied sBIT chunk (4 bytes)
+IDAT chunk check complete at offset 0x8F
+Correct IEND chunk
+Found 22 bytes after IEND: b'"AHH_YOU_FOUND_ME!" '
+IEND chunk check complete
+```
+Identify
+```
+Image: ../de4502de0ae70d4a95d0e304f1b24736.png
+  Format: PNG (Portable Network Graphics)
+  Geometry: 147x37
+  Class: DirectClass
+  Type: true color
+  Depth: 8 bits-per-pixel component
+  Channel Depths:
+    Red:      8 bits
+    Green:    8 bits
+    Blue:     8 bits
+    Opacity:  1 bits
+  Channel Statistics:
+    Red:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                 65535.00 (1.0000)
+      Mean:                    15009.91 (0.2290)
+      Standard Deviation:      25264.60 (0.3855)
+    Green:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                 65535.00 (1.0000)
+      Mean:                    25140.17 (0.3836)
+      Standard Deviation:      27513.91 (0.4198)
+    Blue:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                 65535.00 (1.0000)
+      Mean:                    23260.08 (0.3549)
+      Standard Deviation:      25363.97 (0.3870)
+    Opacity:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                     0.00 (0.0000)
+      Mean:                        0.00 (0.0000)
+      Standard Deviation:          0.00 (0.0000)
+  Filesize: 5.4Ki
+  Interlace: No
+  Orientation: Unknown
+  Background Color: white
+  Border Color: #DFDFDF00
+  Matte Color: #BDBDBD00
+  Page geometry: 147x37+0+0
+  Compose: Over
+  Dispose: Undefined
+  Iterations: 0
+  Compression: Zip
+  Png:IHDR.color-type-orig: 6
+  Png:IHDR.bit-depth-orig: 8
+  Software: gnome-screenshot
+  Creation Time: Wed 15 May 2019 09:09:10 PM CDT
+  Signature: 05a314d393c87850160c0ebd8800d59ec6a783a6e4f0231b003d883f3179d48f
+  Tainted: False
+  Elapsed Time: 0m:0.001190s
+  Pixels Per Second: 4.4Mi
+```
+<img width="529" height="247" alt="image" src="https://github.com/user-attachments/assets/89577f2f-405a-4575-9766-decfe8518506" />
+
+<img width="1141" height="645" alt="image" src="https://github.com/user-attachments/assets/f24e6c92-c66a-490b-8330-e0386781b8a7" />
+``` ***AHH_YOU_FOUND_ME!).*** ```
 
