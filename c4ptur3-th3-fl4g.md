@@ -244,4 +244,5 @@ Online: Anda juga bisa menggunakan alat berbasis web seperti Aperi'Solve atau fi
 Temukan Flag: Setelah tampilan spektrogram muncul, teks atau "flag" akan terlihat secara visual di antara frekuensi suara tersebut
 
 <img width="1366" height="731" alt="image" src="https://github.com/user-attachments/assets/8e1b02f9-a543-4b60-9d3f-fbf3afab1ceb" />
+<img width="1361" height="699" alt="image" src="https://github.com/user-attachments/assets/688e1b95-5c75-464c-b5e8-ed24bc346137" />
 
