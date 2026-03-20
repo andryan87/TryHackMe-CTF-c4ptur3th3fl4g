@@ -233,6 +233,8 @@ Hmm, pada langkah ini saya rasa petunjuk di pertanyaan kita sebelumnya adalah ro
 
 Kemudian, ubah dari desimal,`Let's make this a bit trickier...`
 
+<img width="1364" height="693" alt="image" src="https://github.com/user-attachments/assets/2650e3a6-b5ad-4faf-961d-63458ad3150f" />
+
 # *** Spectrograms — Task 2 ***
 
 Berikut adalah panduan singkat untuk menyelesaikan tugas tersebut:
