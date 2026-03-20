@@ -93,7 +93,9 @@ Pada awalnya, Anda akan melihat pertanyaan ini cukup membingungkan dengan banyak
 Namun perhatikan tanda sama dengan di akhir, itu adalah base64.
 
 Dekode base64 tersebut, kita mendapatkan kode Morse.
-```
+
+```morse
+
 ----- .---- .---- ----- ----- .---- .---- -----
 ----- .---- .---- ----- ----- .---- ----- .----
 ----- ----- .---- ----- ----- ----- ----- -----
@@ -211,6 +213,7 @@ Dekode base64 tersebut, kita mendapatkan kode Morse.
 ----- ----- .---- ----- ----- ----- ----- -----
 ----- .---- .---- ----- ----- ----- .---- .----
 ----- .---- .---- ----- ----- .---- ----- .----
+
 ```
 
 Setelah dikonversi ke kode Morse, kita memiliki:
