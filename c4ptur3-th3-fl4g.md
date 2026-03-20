@@ -254,3 +254,14 @@ Temukan Flag: Setelah tampilan spektrogram muncul, teks atau "flag" akan terliha
 <img width="1366" height="731" alt="image" src="https://github.com/user-attachments/assets/8e1b02f9-a543-4b60-9d3f-fbf3afab1ceb" />
 <img width="1361" height="699" alt="image" src="https://github.com/user-attachments/assets/688e1b95-5c75-464c-b5e8-ed24bc346137" />
 
+# ***Steganography — Task 3***
+ikuti langkah-langkah berikut:
+Unduh Gambar: Simpan gambar yang disediakan dalam tugas tersebut ke komputer Anda.
+Gunakan Steghide: Karena petunjuk menyebutkan "Steganographic Decoder", Anda bisa menggunakan alat baris perintah steghide.
+Jalankan perintah: steghide extract -sf stegosteg.jpg.
+Saat diminta passphrase, cukup tekan Enter (kosongkan) karena file tersebut tidak diproteksi kata sandi.
+Baca Hasil Ekstraksi: Perintah di atas akan mengekstrak sebuah file teks (biasanya bernama steganopayload2248.txt). Buka file tersebut untuk melihat flag/jawabannya
+
+Alternatifnya, Anda juga bisa menggunakan layanan web seperti Aperi'Solve dengan mengunggah gambar tersebut untuk melihat pesan yang tersembunyi secara otomatis.
+
+https://www.aperisolve.com/e1bcd066f9d37f46622cb63cf5600a48
